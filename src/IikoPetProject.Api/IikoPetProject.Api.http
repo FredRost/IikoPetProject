@@ -1,0 +1,6 @@
+@IikoPetProject.Api_HostAddress = http://localhost:5124
+
+GET {{IikoPetProject.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
