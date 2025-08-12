@@ -1,0 +1,17 @@
+# Все текстовые файлы с LF окончаниями строк
+* text=auto eol=lf
+
+# *.cs файлы — всегда в utf-8 и LF
+*.cs text encoding=utf-8 eol=lf
+
+# Маркируем бинарники
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+
+# Для Windows CRLF для некоторых файлов (если нужно)
+*.bat text eol=crlf
+*.cmd text eol=crlf

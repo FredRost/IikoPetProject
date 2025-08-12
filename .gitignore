@@ -1,0 +1,31 @@
+# Файлы сборки и вывода
+bin/
+obj/
+out/
+
+# Конфигурации Visual Studio
+.vs/
+*.user
+*.suo
+
+# Файлы локальной среды
+*.local
+*.env
+
+# Пакеты NuGet
+*.nupkg
+*.snupkg
+
+# Папки с кэшем
+.vscode/
+.idea/
+
+# Логи
+*.log
+
+# Docker
+docker-compose.override.yml
+
+# OS специфичные файлы
+Thumbs.db
+.DS_Store
