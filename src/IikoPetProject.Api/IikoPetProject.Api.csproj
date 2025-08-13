@@ -7,46 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers - Копировать\**" />
-    <Compile Remove="Data - Копировать\**" />
-    <Compile Remove="DTOs - Копировать\**" />
-    <Compile Remove="Extensions - Копировать\**" />
-    <Compile Remove="Models - Копировать\**" />
-    <Compile Remove="Repositories - Копировать\**" />
-    <Compile Remove="Services - Копировать\**" />
-    <Content Remove="Controllers - Копировать\**" />
-    <Content Remove="Data - Копировать\**" />
-    <Content Remove="DTOs - Копировать\**" />
-    <Content Remove="Extensions - Копировать\**" />
-    <Content Remove="Models - Копировать\**" />
-    <Content Remove="Repositories - Копировать\**" />
-    <Content Remove="Services - Копировать\**" />
-    <EmbeddedResource Remove="Controllers - Копировать\**" />
-    <EmbeddedResource Remove="Data - Копировать\**" />
-    <EmbeddedResource Remove="DTOs - Копировать\**" />
-    <EmbeddedResource Remove="Extensions - Копировать\**" />
-    <EmbeddedResource Remove="Models - Копировать\**" />
-    <EmbeddedResource Remove="Repositories - Копировать\**" />
-    <EmbeddedResource Remove="Services - Копировать\**" />
-    <None Remove="Controllers - Копировать\**" />
-    <None Remove="Data - Копировать\**" />
-    <None Remove="DTOs - Копировать\**" />
-    <None Remove="Extensions - Копировать\**" />
-    <None Remove="Models - Копировать\**" />
-    <None Remove="Repositories - Копировать\**" />
-    <None Remove="Services - Копировать\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.8">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.8" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\IikoPetProject.Common\IikoPetProject.Common.csproj" />
+    <ProjectReference Include="..\IikoPetProject.Application\IikoPetProject.Application.csproj" />
+    <ProjectReference Include="..\IikoPetProject.Infrastructure\IikoPetProject.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

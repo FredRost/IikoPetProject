@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iG7SfJCjQI0=",
+  "dgSpecHash": "WlQBg2T5tuY=",
   "success": true,
   "projectFilePath": "E:\\GitLab\\IikoPetProject\\src\\IikoPetProject.Web\\IikoPetProject.Web.csproj",
   "expectedPackageFiles": [
@@ -10,7 +10,6 @@
     "C:\\Users\\fredr\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\9.0.6\\microsoft.aspnetcore.components.forms.9.0.6.nupkg.sha512",
     "C:\\Users\\fredr\\.nuget\\packages\\microsoft.aspnetcore.components.web\\9.0.6\\microsoft.aspnetcore.components.web.9.0.6.nupkg.sha512",
     "C:\\Users\\fredr\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\9.0.6\\microsoft.aspnetcore.components.webassembly.9.0.6.nupkg.sha512",
-    "C:\\Users\\fredr\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\9.0.6\\microsoft.aspnetcore.components.webassembly.devserver.9.0.6.nupkg.sha512",
     "C:\\Users\\fredr\\.nuget\\packages\\microsoft.aspnetcore.metadata\\9.0.6\\microsoft.aspnetcore.metadata.9.0.6.nupkg.sha512",
     "C:\\Users\\fredr\\.nuget\\packages\\microsoft.extensions.configuration\\9.0.6\\microsoft.extensions.configuration.9.0.6.nupkg.sha512",
     "C:\\Users\\fredr\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.6\\microsoft.extensions.configuration.abstractions.9.0.6.nupkg.sha512",

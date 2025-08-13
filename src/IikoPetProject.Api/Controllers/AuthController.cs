@@ -1,48 +1,35 @@
-using IikoPetProject.Api.Services;
+using IikoPetProject.Application.DTOs;
+using IikoPetProject.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace IikoPetProject.Api.Controllers
 {
+    /// <summary>
+    /// Контроллер аутентификации (регистрация/логин).
+    /// </summary>
     [ApiController]
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
 
-        public AuthController(IAuthService authService)
-        {
-            _authService = authService;
-        }
+        /// <summary>Внедрение сервиса аутентификации.</summary>
+        public AuthController(IAuthService authService) => _authService = authService;
 
-        [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginRequest request)
-        {
-            var user = await _authService.AuthenticateAsync(request.Username, request.Password);
-            if (user == null)
-                return Unauthorized();
-
-            return Ok(user);
-        }
-
+        /// <summary>Регистрация нового пользователя.</summary>
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] RegisterRequest request)
+        public async Task<ActionResult<AuthResponseDto>> Register([FromBody] RegisterDto dto)
         {
-            await _authService.RegisterAsync(request.Username, request.Password, request.Email);
-            return Ok();
+            var result = await _authService.RegisterAsync(dto.Username, dto.Email, dto.Password);
+            return Ok(result);
         }
-    }
 
-    public class LoginRequest
-    {
-        public string Username { get; set; } = null!;
-        public string Password { get; set; } = null!;
-    }
-
-    public class RegisterRequest
-    {
-        public string Username { get; set; } = null!;
-        public string Password { get; set; } = null!;
-        public string Email { get; set; } = null!;
+        /// <summary>Авторизация пользователя (получение JWT).</summary>
+        [HttpPost("login")]
+        public async Task<ActionResult<AuthResponseDto>> Login([FromBody] LoginDto dto)
+        {
+            var result = await _authService.LoginAsync(dto.Email, dto.Password);
+            return Ok(result);
+        }
     }
 }

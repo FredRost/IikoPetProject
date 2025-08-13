@@ -1,0 +1,47 @@
+volumes:
+  iiko_pgdata:
+
+services:
+  db:
+    image: postgres:16
+    container_name: iikodb
+    environment:
+      POSTGRES_DB: IikoPet
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 2900422Xp
+    ports:
+      - "5432:5432"
+    volumes:
+      - iiko_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d IikoPet"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: src/IikoPetProject.Api/Dockerfile
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      # JWT
+      Jwt__Key: ОченьСекретныйКлюч12345
+      Jwt__Issuer: IikoPetProject
+      Jwt__Audience: IikoPetProjectUsers
+      # DB string (имеет приоритет над appsettings.json)
+      ConnectionStrings__DefaultConnection: Host=db;Port=5432;Database=IikoPet;Username=postgres;Password=2900422Xp
+    ports:
+      - "5000:80"
+
+  web:
+    build:
+      context: .
+      dockerfile: src/IikoPetProject.Web/Dockerfile
+    depends_on:
+      - api
+    ports:
+      - "80:80"
